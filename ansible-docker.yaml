@@ -24,7 +24,7 @@
     - name: Build a container
       docker_container:
         name: tomcat_cont
-        image: sapin1/hariapp:${d_version}
+        image: "sapin1/hariapp:${d_version}"
         state: started
         published_ports:
           - 0.0.0.0:8081:8081

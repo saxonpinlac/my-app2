@@ -1,0 +1,24 @@
+pipeline {
+    
+    ageny any
+    tools {
+        maven 'maven'
+    }
+    environment {
+        PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+    }
+
+    stages {
+        stage('SCM') {
+            steps {
+                git credentialsId: 'github', 
+                url: 'https://github.com/saxonpinlac/my-app2'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+    }
+}

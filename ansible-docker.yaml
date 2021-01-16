@@ -23,7 +23,7 @@
         state: present
     - name: Build a container
       docker_container:
-        name: tomcat_cont
+        name: hariapp
         image: "sapin1/hariapp:{{d_version}}"
         state: started
         published_ports:

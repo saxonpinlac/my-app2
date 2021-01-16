@@ -6,7 +6,7 @@
     - name: Install Pip
       apt:
         update_cache: yes
-        name: python-pip
+        name: python3-pip
         state: present
     - name: Install docker
       apt:

@@ -1,5 +1,5 @@
 ---
-- host: dev1
+- hosts: dev1
   name: Install docker in dev
   become: true
   tasks:

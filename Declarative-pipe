@@ -24,14 +24,14 @@ pipeline {
         stage('Deploy the Tomcat') {
             steps {
                 sshagent(['ubuntu-slave2']) {
-                    sh '''
+                    sh """
                     scp -o StrictHostKeyChecking=no target/myweb.par ubuntu@192.168.175.143:/opt/apache-tomcat-8.5.61/webapps
                     
                     ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/shutdown.sh
                     
                     ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/startup.sh
                            
-                    '''
+                    """
                 } 
             }
         }

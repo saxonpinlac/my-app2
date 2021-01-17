@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sshagent(['ubuntu-slave2']) {
                     sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.par ubuntu@192.168.175.143:/opt/apache-tomcat-8.5.61/webapps
+                    scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Declarative_pipeline/target/myweb.par ubuntu@192.168.175.143:/opt/apache-tomcat-8.5.61/webapps
                     
                     ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/shutdown.sh
                     

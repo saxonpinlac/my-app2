@@ -27,9 +27,9 @@ pipeline {
                     sh """
                     scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Declarative_pipeline/target/myweb.war ubuntu@192.168.175.143:/opt/apache-tomcat-8.5.61/webapps
                     
-                    ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/shutdown.sh
+                    ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/bin/shutdown.sh
                     
-                    ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/startup.sh
+                    ssh ubuntu@192.168.175.143 ubuntu@192.168.175.143 /opt/apache-tomcat-8.5.61/bin/startup.sh
                            
                     """
                 } 
